@@ -1,0 +1,26 @@
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin pad {
+  @media (min-width: 376px) {
+    @content;
+  }
+}
+
+@mixin web {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) .step_contain_circle::after {
+      content: "#{$i}";
+      font-size: 1em;
+    }
+  }
+}
